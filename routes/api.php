@@ -1,10 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TaskController;
 
-Route::get('/tasks', function () {
-    return [
-        ['id' => 1, 'title' => 'Einkaufen gehen', 'done' => false],
-        ['id' => 2, 'title' => 'Programmieren lernen', 'done' => true],
-    ];
-});
+Route::apiResource('tasks', TaskController::class);
